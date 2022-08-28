@@ -27,6 +27,8 @@ where
 		WHERE `taxonomy` in ('product_cat', 'product_type', 'product_visibility') 
 	);
 	
+DELETE FROM `wp_options` WHERE option_name LIKE '%category_square_id_%'
+	
 DELETE FROM `wp_term_taxonomy` WHERE `taxonomy` in ('product_cat', 'product_type', 'product_visibility');
 
 DELETE meta FROM wp_termmeta meta LEFT JOIN wp_terms terms ON terms.term_id = meta.term_id WHERE terms.term_id IS NULL;
