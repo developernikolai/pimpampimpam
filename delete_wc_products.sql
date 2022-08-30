@@ -34,5 +34,3 @@ DELETE FROM `wp_term_taxonomy` WHERE `taxonomy` in ('product_cat', 'product_type
 DELETE meta FROM wp_termmeta meta LEFT JOIN wp_terms terms ON terms.term_id = meta.term_id WHERE terms.term_id IS NULL;
 
 DELETE FROM wp_woocommerce_attribute_taxonomies;
-
-DELETE a FROM wp_posts a LEFT JOIN wp_posts b ON a.post_parent=b.ID WHERE a.post_type='attachment' AND b.ID IS NULL;
